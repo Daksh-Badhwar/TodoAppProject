@@ -1,6 +1,8 @@
 import React from "react";
+import styles from "./AppName.module.css"
 const AppName=()=>{
-return <h1> Todo React app </h1>;
+return <h1 className={styles.todoHeading}> Todo React app </h1>;
+
 
     
 

@@ -1,8 +1,7 @@
 import React from "react";
-const TodoItem1=()=>{
+const TodoItem=({todoName,todoDate})=>{
 
-let todoName = 'Buy Milk';
-let todoDate = '4-10-23';
+    
 
 
 return (
@@ -25,4 +24,4 @@ return (
 
 
 }
-export default TodoItem1;
+export default TodoItem;

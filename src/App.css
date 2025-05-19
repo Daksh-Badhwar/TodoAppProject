@@ -1,10 +1,4 @@
-h1{
-    font-weight: 800;
-    font-size: 40px;
-    margin: 30px;
-    margin-bottom: 60px;
-    
-}
+
 input{
     width:100%;
     
@@ -13,9 +7,7 @@ input{
    font-weight: 400;
     font-size: 35px; 
 }
-.items-container{
-    text-align: left;
-}
+
 .kg-row{
  margin: 10px 5px;
 }
