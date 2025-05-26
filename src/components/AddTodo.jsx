@@ -1,8 +1,9 @@
 import {useState} from "react";
+import { MdOutlineAddComment } from "react-icons/md";
 
 
 const AddTodo=({onNewItem})=>{
-  
+
   const [todoName,setTodoName]=useState("");
 const [dueDate,setDueDate]=useState();
 
@@ -32,7 +33,7 @@ const handleAddButtonClicked=()=>{
     </div>
       <div className="col-2">
         <button type="button" className="btn btn-success kg-button"
-        onClick={handleAddButtonClicked}>Add</button>
+        onClick={handleAddButtonClicked}><MdOutlineAddComment /></button>
       </div>
   </div>
 </div>
