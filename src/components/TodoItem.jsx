@@ -15,7 +15,7 @@ return (
       {todoDate}
     </div>
       <div class="col-2">
-        <button type="button" class="btn btn-danger kg-button" onClick={()=>onDeleteClick(todoName)}><MdDelete />cl</button>
+        <button type="button" class="btn btn-danger kg-button" onClick={()=>onDeleteClick(todoName)}><MdDelete /></button>
       </div>
 
 </div>
