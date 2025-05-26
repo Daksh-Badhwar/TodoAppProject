@@ -10,29 +10,22 @@ import WelcomeMessage from "./components/WelcomeMessage";
 
 //why state in app compoennent as item not dependenet on add but add is.
 
+//list is with app so for delete we need list
+
 function App() {
  let name;
  let dueDate;
 
-  const initialTodoItems = [
-    {
-      name: "To test Buy",
-      dueDate: "4/10/23"
-    },
-    {
-      name: "To test Go",
-      dueDate: "4/10/23"
-    },
-     {
-      name: "Like this video",
-      dueDate: "right now"
-    }
-  ] 
+ 
 
-const [todoItems,setTodoItems]=useState(initialTodoItems);
+const [todoItems,setTodoItems]=useState([]);
 const handleNewItem = (itemName,itemDueDate)=>{
 const newtodoItems=[...todoItems,{name:itemName,dueDate:itemDueDate}];
 setTodoItems(newtodoItems);
+}
+const handleDeleteItem= (toDoItemName)=>{
+ const newtodoItems= todoItems.filter((item)=>item.name!==toDoItemName);
+ setTodoItems(newtodoItems);
 }
 
 
@@ -41,7 +34,7 @@ setTodoItems(newtodoItems);
       <AppName></AppName>
       <AddTodo onNewItem={handleNewItem}></AddTodo>
       {todoItems.length===0 && <WelcomeMessage></WelcomeMessage>}
-     <TodoItems todoItems={todoItems}></TodoItems>
+     <TodoItems todoItems={todoItems} onDeleteClick={handleDeleteItem} ></TodoItems>
 
     </center>
 

@@ -1,5 +1,5 @@
 import React from "react";
-const TodoItem=({todoName,todoDate})=>{
+const TodoItem=({todoName,todoDate,onDeleteClick})=>{
 
     
 
@@ -14,7 +14,7 @@ return (
       {todoDate}
     </div>
       <div class="col-2">
-        <button type="button" class="btn btn-danger kg-button">Delete</button>
+        <button type="button" class="btn btn-danger kg-button" onClick={()=>onDeleteClick(todoName)}>Delete</button>
       </div>
 
 </div>
