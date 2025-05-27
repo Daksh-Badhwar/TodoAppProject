@@ -1,13 +1,14 @@
 import {useState,useRef} from "react";
 import { MdOutlineAddComment } from "react-icons/md";
+import {TodoItemsContext} from "../store/todo-items-store";
+import {useContext} from "react";
 
-
-const AddTodo=({onNewItem})=>{
+const AddTodo=()=>{
 
 const todoNameElement= useRef();
 const dueDateElement=useRef();
 
-
+const {addNewItem}=useContext(TodoItemsContext);
 
 
 const handleAddButtonClicked=(event)=>{
@@ -16,7 +17,7 @@ const handleAddButtonClicked=(event)=>{
   const dueDate=dueDateElement.current.value;
   todoNameElement.current.value="";
   dueDateElement.current.value="";
- onNewItem(todoName,dueDate);
+ addNewItem(todoName,dueDate);
  
 
 }

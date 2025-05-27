@@ -7,14 +7,14 @@ import TodoItem from "./components/TodoItem";
 import TodoItems from "./components/TodoItems";
 import React,{useState} from 'react';
 import WelcomeMessage from "./components/WelcomeMessage";
+import {TodoItemsContext} from "./store/todo-items-store";
 
 //why state in app compoennent as item not dependenet on add but add is.
 
 //list is with app so for delete we need list
 
 function App() {
- let name;
- let dueDate;
+ 
 
  
 
@@ -32,13 +32,19 @@ const handleDeleteItem= (toDoItemName)=>{
 
 
   return (
+    <TodoItemsContext.Provider value={{
+      todoItems:todoItems,
+      addNewItem: handleNewItem,
+       deleteItem: handleDeleteItem,
+    }}>
     <center className="todo-container">
       <AppName></AppName>
-      <AddTodo onNewItem={handleNewItem}></AddTodo>
-      {todoItems.length===0 && <WelcomeMessage></WelcomeMessage>}
-     <TodoItems todoItems={todoItems} onDeleteClick={handleDeleteItem} ></TodoItems>
+      <AddTodo ></AddTodo>
+       <WelcomeMessage ></WelcomeMessage>
+     <TodoItems   ></TodoItems>
 
     </center>
+    </TodoItemsContext.Provider>
 
   )}
 
